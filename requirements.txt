@@ -1,0 +1,18 @@
+# --- needed to run the system -------------------------------------------
+wfdb>=4.1          # downloads ECG recordings from PhysioNet
+scipy>=1.10        # resampling and filtering
+numpy>=1.24        # maths
+flask>=3.0         # the server
+
+# --- needed to train the classifier (Step 7) ----------------------------
+scikit-learn>=1.3
+
+# --- needed only to regenerate the report figures -----------------------
+matplotlib>=3.7
+pandas>=2.0
+
+# --- Raspberry Pi only, for Bluetooth -----------------------------------
+# Expect this to fail on Windows and macOS. That is fine: it is only used on
+# the Pi, and the installer script there handles it. If the failure stops the
+# whole install, install the packages above individually instead.
+pybluez2>=0.46 ; platform_system == "Linux"

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  NOT a complete Info.plist. These are the keys you must ADD to the one Xcode
+  generates. In Xcode 15+ use the target's Info tab, or paste these into
+  Info.plist if your project has a file-based one.
+
+  1. NSBluetoothAlwaysUsageDescription is MANDATORY. Without it iOS kills the
+     app the instant it creates a CBCentralManager — it does not merely deny
+     permission, it crashes the process.
+
+  2. The ATS exception permits plain HTTP to a lab server. iOS blocks cleartext
+     by default. Scoped to a single domain rather than switching ATS off
+     globally; change the key to your server's IP or hostname.
+-->
+<plist version="1.0">
+<dict>
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>Connects to the ECG transmitter to receive heart signal data.</string>
+
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>192.168.1.100</key>
+            <dict>
+                <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                <true/>
+            </dict>
+        </dict>
+    </dict>
+</dict>
+</plist>

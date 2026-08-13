@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0B0F14"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ECG MONITOR"
+        android:textColor="#7D93A8"
+        android:textSize="12sp"
+        android:letterSpacing="0.15"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/hrText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="--"
+            android:textColor="#39D98A"
+            android:textSize="48sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  bpm"
+            android:textColor="#7D93A8"
+            android:textSize="14sp"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:id="@+id/resultText"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="waiting"
+            android:textColor="#7D93A8"
+            android:textSize="15sp"
+            android:layout_marginBottom="10dp" />
+    </LinearLayout>
+
+    <com.example.ecg.ui.EcgView
+        android:id="@+id/ecgView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/statsText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#5A7186"
+        android:textSize="12sp"
+        android:layout_marginTop="6dp"
+        android:fontFamily="monospace" />
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="not connected"
+        android:textColor="#7D93A8"
+        android:textSize="13sp"
+        android:layout_marginTop="4dp" />
+
+    <EditText
+        android:id="@+id/deviceField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="device name prefix, or tcp://192.168.1.100:9000"
+        android:textColorHint="#4A5D70"
+        android:textColor="#D6E2EE"
+        android:textSize="14sp"
+        android:inputType="text"
+        android:layout_marginTop="8dp"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/serverField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="http://192.168.1.100:8000/api/ecg"
+        android:textColor="#D6E2EE"
+        android:textSize="14sp"
+        android:inputType="textUri"
+        android:importantForAutofill="no" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dp">
+
+        <Switch
+            android:id="@+id/localSwitch"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Classify on phone"
+            android:textColor="#D6E2EE"
+            android:checked="true" />
+
+        <Button
+            android:id="@+id/connectButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Connect" />
+    </LinearLayout>
+</LinearLayout>
