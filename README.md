@@ -15,3 +15,6 @@ This project demonstrates the telemedicine system using:
 - Raspberry Pi 4B running Debian OS 12 Bookworm as the Bluetooth server
 - Android mobile app that reads ECG data via Bluetooth and classifies ECG data via Wifi
 - Windows 11 Desktop as the Wifi classification server
+
+Common Issues
+- If copying directly from the Github, then delete the ".venv" file to reset the virtual environment. Redo the requirement installations like Scipy and Numpy in a new virtual environment
