@@ -244,13 +244,12 @@ The package name must be exactly `com.example.ecg` — the code files declare it
 
 Let it finish syncing.
 
-### 4.3 Copy the code in
-
-Studio put the project somewhere like
+### 4.3 Copy the code into Android Studio 
+Save the Android Studio project in your files, such as
 `C:\Users\YourName\AndroidStudioProjects\ECGMonitor`. To confirm, right-click
 the project name → **Open In → Explorer**.
 
-In PowerShell, set the first two lines to your paths and run the rest:
+In the terminal, run the following two lines of code with your Android Studio path and ecg-project path. Then, run the rest of the code to copy the files:
 
 ```powershell
 $dest = "C:\Users\YourName\AndroidStudioProjects\ECGMonitor\app\src\main"
@@ -275,7 +274,7 @@ Get-ChildItem "$dest\java" -Recurse -Filter *.java | Measure-Object
 
 ### 4.4 Edit the manifest
 
-Open `app/src/main/AndroidManifest.xml`. If it looks like one long line with no
+In the Android Studio project, open `app/src/main/AndroidManifest.xml`. If it looks like one long line with no
 line breaks, you are looking at the read-only **Merged Manifest** preview — click
 the **AndroidManifest.xml** tab at the bottom of the editor.
 

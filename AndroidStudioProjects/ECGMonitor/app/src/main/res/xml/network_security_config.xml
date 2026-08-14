@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Android 9 (API 28) and later block plain HTTP by default. Without this file
+  every upload fails with "Cleartext HTTP traffic not permitted" and the app
+  looks like a networking bug when it is really a platform policy.
+
+  Rather than switching cleartext on globally with usesCleartextTraffic="true",
+  this permits it ONLY for private LAN addresses, so a lab server works while
+  anything on the public internet is still forced to HTTPS.
+
+  ADD YOUR SERVER'S IP BELOW if it is not in one of these ranges.
+-->
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">192.168.0.0</domain>
+        <domain includeSubdomains="true">192.168.1.100</domain>
+        <domain includeSubdomains="true">10.0.0.0</domain>
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">10.0.2.2</domain>
+    </domain-config>
+</network-security-config>
